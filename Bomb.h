@@ -4,7 +4,7 @@ class cBomb :
     public cObject
 {
 private:
-    float m_Direction; // 위 아래 방향
+    float m_Theta; // 각도로 방향을 정함.
 
 public:
     cBomb();
@@ -12,12 +12,7 @@ public:
 
     virtual void Update();
     virtual void Render(HDC _hdc);
-    void SetDirection(bool _Up)
-    {
-        if (_Up)
-            m_Direction = -1.f;
-        else
-            m_Direction = 1.f;
-    }
+
+    void SetDir(float _theta) { m_Theta = _theta; }
 };
 

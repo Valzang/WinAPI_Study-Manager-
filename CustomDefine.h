@@ -4,6 +4,9 @@
 #include <vector>
 #include <tchar.h>
 #include <string>
+#include <cmath>
+
+#define PI 3.1415926535
 
 using namespace std;
 

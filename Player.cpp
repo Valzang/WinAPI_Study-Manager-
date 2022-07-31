@@ -1,9 +1,6 @@
 #include "Player.h"
-#include "TimeManager.h"
-#include "KeyManager.h"
 
 #include "Bomb.h"
-
 #include "SceneManager.h"
 #include "Scene.h"
 
@@ -47,7 +44,7 @@ void cPlayer::CreateBomb()
 	cBomb* bomb = new cBomb;
 	bomb->SetPos(bomb_Pos);
 	bomb->SetScale(Vec2(25.f, 25.f));
-	bomb->SetDirection(true);
+	//bomb->SetDirection(true);
 
 	cScene* curScene = cSceneManager::GetInstance()->GetCurScene();
 	curScene->AddObject(bomb, GROUP_TYPE::DEFAULT);
