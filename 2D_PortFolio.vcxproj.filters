@@ -44,6 +44,15 @@
     <Filter Include="Engine\01. Define &amp; Core">
       <UniqueIdentifier>{46f7ebe7-faf5-4b44-9ec5-ceda22df5fb8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\05. Resources">
+      <UniqueIdentifier>{0156484e-01c7-4d6b-ab2b-882f419bb947}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\05. Resources\Header">
+      <UniqueIdentifier>{fe148f0c-20c8-4da6-94d1-2754e4646a92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\05. Resources\Source">
+      <UniqueIdentifier>{62c65ecb-6a35-40f7-aa05-7624953440ea}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CustomDefine.h">
@@ -90,6 +99,15 @@
     </ClInclude>
     <ClInclude Include="Bomb.h">
       <Filter>Engine\03. Object\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Resources.h">
+      <Filter>Engine\05. Resources\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound.h">
+      <Filter>Engine\05. Resources\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Engine\05. Resources\Header</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -138,6 +156,15 @@
     </ClCompile>
     <ClCompile Include="Bomb.cpp">
       <Filter>Engine\03. Object\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Resources.cpp">
+      <Filter>Engine\05. Resources\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Sound.cpp">
+      <Filter>Engine\05. Resources\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Engine\05. Resources\Source</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
