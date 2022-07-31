@@ -5,6 +5,7 @@
 #include <tchar.h>
 #include <string>
 #include <cmath>
+#include <assert.h>
 
 #define PI 3.1415926535
 
@@ -28,7 +29,7 @@ struct Vec2
 	float x;
 	float y;
 
-public:
+	// 생성자 ===================================================
 	Vec2(const POINT _pt) : x((float)_pt.x), y((float)_pt.y) {}
 	Vec2& operator=(POINT _pt)
 	{
@@ -39,6 +40,23 @@ public:
 	Vec2() : x(0.f), y(0.f) {}
 	Vec2(float _x, float _y) : x(_x), y(_y) {}
 	Vec2(int _x, int _y) : x((float)_x), y((float)_y) {}
+
+	// 생성자 ===================================================
+	Vec2& Normalize()
+	{
+		float fLen = Length();
+
+		assert(fLen != 0.f); // 0이면 오류
+
+		x /= fLen;
+		y /= fLen;
+		return* this;
+	}
+
+	float Length()
+	{
+		return sqrt(x* x + y * y);
+	}
 };
 
 enum class GROUP_TYPE

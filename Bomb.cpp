@@ -4,8 +4,9 @@
 // PI == -PI 좌측직선		0	=> 우측 직선
 // PI/2 => 아래직선			-PI/2 => 위 직선
 // PI/4 => 우측아래대각선		-PI/4 => 우측위 대각선
-cBomb::cBomb() : m_Theta((float)(3*PI / -4.f))
+cBomb::cBomb() : m_Theta((float)(3*PI / -4.f)), m_Dir(Vec2(-2.f,-3.f))
 {
+	m_Dir.Normalize();
 }
 
 cBomb::~cBomb()
@@ -37,8 +38,16 @@ void cBomb::Update()
 	Pos.y += 500.f * sinf(m_Theta) * DELTA_TIME;
 	*/
 
-	Pos.x += 600.f * cosf(m_Theta) * DELTA_TIME;
-	Pos.y += 600.f * sinf(m_Theta) * DELTA_TIME;
+	// 각도로 변화
+	//Pos.x += 600.f * cosf(m_Theta) * DELTA_TIME;
+	//Pos.y += 600.f * sinf(m_Theta) * DELTA_TIME;
+
+
+	// 벡터로 변화
+	Pos.x += 600.f * m_Dir.x * DELTA_TIME;
+	Pos.y += 600.f * m_Dir.y * DELTA_TIME;
+
+	m_Dir.y += 0.002f;
 
 	SetPos(Pos);
 
