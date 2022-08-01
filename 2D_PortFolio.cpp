@@ -31,7 +31,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     // 메모리 릭 체크
     _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
     //new int;
-    //_CrtSetBreakAlloc(268);
+    //_CrtSetBreakAlloc(298);
 
     UNREFERENCED_PARAMETER(hPrevInstance);
     UNREFERENCED_PARAMETER(lpCmdLine);
@@ -179,7 +179,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		break;
 		case WM_DESTROY:
 			PostQuitMessage(0);
-            _CrtDumpMemoryLeaks();
+            //_CrtDumpMemoryLeaks();
 			break;
 		default:
 			return DefWindowProc(hWnd, message, wParam, lParam);
