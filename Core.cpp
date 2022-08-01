@@ -1,5 +1,4 @@
 #include "Core.h"
-#include "Object.h"
 
 
 CCore::CCore() : m_hBit(NULL), m_hDC(NULL)
@@ -40,6 +39,7 @@ int CCore::Init(HWND _hWnd, POINT _ptResolution)
 	DeleteObject(hOldBitmap);
 
 	// Manager 초기화
+	cPathManager::GetInstance()->Init();
 	cTimeManager::GetInstance()->Init();
 	cKeyManager::GetInstance()->Init();
 	cSceneManager::GetInstance()->Init();
@@ -50,7 +50,7 @@ int CCore::Init(HWND _hWnd, POINT _ptResolution)
 
 void CCore::Progress()
 {
-
+	
 	cTimeManager::GetInstance()->Update();
 	cKeyManager::GetInstance()->Update();
 	cSceneManager::GetInstance()->Update();
@@ -65,12 +65,6 @@ void CCore::Progress()
 	BitBlt(m_hDC, 0, 0, m_ptResolution.x, m_ptResolution.y
 		   , m_memDC, 0, 0, SRCCOPY);
 
-}
+	//cTimeManager::GetInstance()->Render(); // 프레임 표시
 
-void CCore::Update()
-{
-}
-
-void CCore::Render()
-{
 }

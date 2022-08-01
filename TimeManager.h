@@ -20,6 +20,7 @@ private:
 public:
 	void Init();
 	void Update();
+	void Render();
 
 	float GetDT() { return (float)m_deltaTime; }
 

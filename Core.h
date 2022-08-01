@@ -1,7 +1,12 @@
 #pragma once
+
 #include "CustomDefine.h"
+#include "Object.h"
+
+
 #include "TimeManager.h"
 #include "SceneManager.h"
+#include "PathManager.h"
 
 class CCore
 {
@@ -19,7 +24,5 @@ public:
 	HWND GetMainHwnd() { return m_hWnd; }
 	POINT GetResolution() { return m_ptResolution; }
 	void Progress();
-	void Update();
-	void Render();
 };
 

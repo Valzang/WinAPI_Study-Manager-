@@ -109,6 +109,9 @@
     <ClInclude Include="Texture.h">
       <Filter>Engine\05. Resources\Header</Filter>
     </ClInclude>
+    <ClInclude Include="PathManager.h">
+      <Filter>Engine\02. Manager\Header</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="2D_PortFolio.rc">
@@ -165,6 +168,9 @@
     </ClCompile>
     <ClCompile Include="Texture.cpp">
       <Filter>Engine\05. Resources\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="PathManager.cpp">
+      <Filter>Engine\02. Manager\Source</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

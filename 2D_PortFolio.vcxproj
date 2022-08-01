@@ -142,6 +142,7 @@
     <ClInclude Include="2D_PortFolio.h" />
     <ClInclude Include="Bomb.h" />
     <ClInclude Include="Core.h" />
+    <ClInclude Include="PathManager.h" />
     <ClInclude Include="Resources.h" />
     <ClInclude Include="KeyManager.h" />
     <ClInclude Include="Monster.h" />
@@ -162,6 +163,7 @@
     <ClCompile Include="2D_PortFolio.cpp" />
     <ClCompile Include="Bomb.cpp" />
     <ClCompile Include="Core.cpp" />
+    <ClCompile Include="PathManager.cpp" />
     <ClCompile Include="Resources.cpp" />
     <ClCompile Include="KeyManager.cpp" />
     <ClCompile Include="Monster.cpp" />

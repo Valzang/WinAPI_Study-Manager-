@@ -32,6 +32,11 @@ void cTimeManager::Update()
 	// 이전 카운트 값을 전체값을 갱신(다음번 계산을 위해)
 	m_prevCount = m_curCount;
 
+	
+}
+
+void cTimeManager::Render()
+{
 	// 함수 호출 횟수 증가
 	++m_callCount;
 
