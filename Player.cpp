@@ -4,6 +4,18 @@
 #include "SceneManager.h"
 #include "Scene.h"
 
+cPlayer::cPlayer()
+{
+	// Texture 로딩하기
+	m_Tex = cResourceManager::GetInstance()->LoadTexture(L"PlayerTexture", L"texture\\temmie.bmp");
+	
+}
+
+cPlayer::~cPlayer()
+{
+
+}
+
 void cPlayer::Update()
 {
 	Vec2 Pos = GetPos();
@@ -33,6 +45,23 @@ void cPlayer::Update()
 		CreateBomb();
 	}
 	SetPos(Pos);
+}
+
+void cPlayer::Render(HDC _dc)
+{
+	int iWidth = (int)m_Tex->Width();
+	int iHeight = (int)m_Tex->Height();
+
+	Vec2 Pos = GetPos();
+
+	//BitBlt(_dc,
+	//	   (int)(Pos.x - (float)(iWidth / 2)), (int)(Pos.y - (float)(iHeight / 2)),
+	//	   iWidth, iHeight, m_Tex->GetDC(), 0, 0, SRCCOPY);
+
+	TransparentBlt(_dc,
+		   (int)(Pos.x - (float)(iWidth / 2)), (int)(Pos.y - (float)(iHeight / 2)),
+		   iWidth, iHeight, m_Tex->GetDC(), 0, 0, iWidth, iHeight, RGB(255,0,255));
+
 }
 
 void cPlayer::CreateBomb()

@@ -1,6 +1,8 @@
 #pragma once
 #include "CustomDefine.h"
 #include "Object.h"
+#include "Texture.h"
+#include "Sound.h"
 
 // 헤더 파일을 부를 때와는 다르게
 // 전방선언을 사용할 시 해당 class 내용이 바뀌어도 대응하지 않음.
@@ -14,6 +16,10 @@ private:
 	// 오브젝트들을 담을 벡터를 그룹 개수만큼 선언
 	vector<cObject*> m_arr_obj[(UINT)GROUP_TYPE::END];
 	wstring m_sceneName;
+
+protected:
+
+	cTexture* m_Tex;
 
 public:
 	// 함수 정의를 헤더파일에 할 시에 inline 처리 되서 함수 호출 비용이 줆

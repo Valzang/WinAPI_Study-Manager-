@@ -9,7 +9,6 @@
 #include <crtdbg.h>
 
 
-
 #define MAX_LOADSTRING 100
 
 // 전역 변수:
@@ -29,6 +28,11 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
                      _In_ LPWSTR    lpCmdLine,
                      _In_ int       nCmdShow)
 {
+    // 메모리 릭 체크
+    _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+    //new int;
+    //_CrtSetBreakAlloc(268);
+
     UNREFERENCED_PARAMETER(hPrevInstance);
     UNREFERENCED_PARAMETER(lpCmdLine);
 
@@ -45,7 +49,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
         return FALSE;
     }
 
-    if (FAILED(CCore::GetInstance()->Init(hWnd, POINT {1280, 768})))
+    if (FAILED(cCore::GetInstance()->Init(hWnd, POINT {1280, 768})))
     {
         MessageBox(nullptr, L"Core 객체 초기화 실패", L"ERROR", MB_OK);
         return FALSE;
@@ -70,7 +74,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
             }
         }
         else
-            CCore::GetInstance()->Progress();
+            cCore::GetInstance()->Progress();
             //cTimeManager::GetInstance()->Update();
     }
 
@@ -120,7 +124,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
    {
       return FALSE;
    }
-   CCore::GetInstance()->Init(hWnd, POINT { 1280, 768 });
+   cCore::GetInstance()->Init(hWnd, POINT { 1280, 768 });
    //cTimeManager::GetInstance()->Init();
 
    ShowWindow(hWnd, nCmdShow);

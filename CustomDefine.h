@@ -6,6 +6,9 @@
 #include <string>
 #include <cmath>
 #include <assert.h>
+#include <map>
+
+#pragma comment(lib,"Msimg32.lib")
 
 #define PI 3.1415926535
 

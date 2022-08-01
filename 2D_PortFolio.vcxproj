@@ -143,6 +143,7 @@
     <ClInclude Include="Bomb.h" />
     <ClInclude Include="Core.h" />
     <ClInclude Include="PathManager.h" />
+    <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="Resources.h" />
     <ClInclude Include="KeyManager.h" />
     <ClInclude Include="Monster.h" />
@@ -164,6 +165,7 @@
     <ClCompile Include="Bomb.cpp" />
     <ClCompile Include="Core.cpp" />
     <ClCompile Include="PathManager.cpp" />
+    <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="Resources.cpp" />
     <ClCompile Include="KeyManager.cpp" />
     <ClCompile Include="Monster.cpp" />

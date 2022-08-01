@@ -20,7 +20,7 @@ void cScene_Start::Enter()
 	float MoveDist = 25.f;
 	float ObjectScale = 50.f;
 
-	Vec2 Resolution = CCore::GetInstance()->GetResolution();
+	Vec2 Resolution = cCore::GetInstance()->GetResolution();
 	float temp = (Resolution.x - ((MoveDist+ ObjectScale/2.f) * 2)) / (float)(MonCount-1);
 
 	//Monster Object Ãß°¡

@@ -1,13 +1,13 @@
 #include "Core.h"
 
 
-CCore::CCore() : m_hBit(NULL), m_hDC(NULL)
+cCore::cCore() : m_hBit(NULL), m_hDC(NULL)
 , m_hWnd(NULL), m_memDC(NULL), m_ptResolution({ 0, 0 })
 {
 
 }
 
-CCore::~CCore()
+cCore::~cCore()
 {
 	// GetDC로 만든건 ReleaseDC로 지워야함.
 	ReleaseDC(m_hWnd, m_hDC);
@@ -20,7 +20,7 @@ CCore::~CCore()
 
 
 
-int CCore::Init(HWND _hWnd, POINT _ptResolution)
+int cCore::Init(HWND _hWnd, POINT _ptResolution)
 {
 	m_hWnd = _hWnd;
 	m_ptResolution = _ptResolution;
@@ -48,7 +48,7 @@ int CCore::Init(HWND _hWnd, POINT _ptResolution)
 }
 
 
-void CCore::Progress()
+void cCore::Progress()
 {
 	
 	cTimeManager::GetInstance()->Update();
@@ -65,6 +65,6 @@ void CCore::Progress()
 	BitBlt(m_hDC, 0, 0, m_ptResolution.x, m_ptResolution.y
 		   , m_memDC, 0, 0, SRCCOPY);
 
-	//cTimeManager::GetInstance()->Render(); // 프레임 표시
+	cTimeManager::GetInstance()->Render(); // 프레임 표시
 
 }

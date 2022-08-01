@@ -11,5 +11,6 @@ private:
 
 public:
 	void Init();
+	const wchar_t* GetContentPath() { return m_sizeContentsPath; }
 };
 

@@ -14,7 +14,7 @@ void cPathManager::Init()
 	GetCurrentDirectory(255, m_sizeContentsPath);
 
 	// 상위 폴더로 이동
-	int Len = wcslen(m_sizeContentsPath);
+	int Len = (int)wcslen(m_sizeContentsPath);
 	for (int i = Len - 1; i >= 0; --i)
 	{
 		if (m_sizeContentsPath[i] == '\\')
