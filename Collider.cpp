@@ -15,9 +15,9 @@ cCollider::~cCollider()
 void cCollider::FinalUpdate()
 {
 	// Object의 위치를 따라간다.
-	//Vec2 ObjectPos = m_Owner->GetPos();
-	//m_FinalPos = ObjectPos + m_OffsetPos;
-	m_FinalPos = m_Owner->GetPos();
+	Vec2 ObjectPos = m_Owner->GetPos();
+	m_FinalPos = ObjectPos + m_OffsetPos;
+	//m_FinalPos = m_Owner->GetPos();
 }
 
 void cCollider::Render(HDC _hdc)
