@@ -7,6 +7,7 @@
 cBomb::cBomb() : m_Theta((float)(3*PI / -4.f)), m_Dir(Vec2(-2.f,-3.f))
 {
 	m_Dir.Normalize();
+	//CreateCollider();
 }
 
 cBomb::~cBomb()
@@ -61,4 +62,6 @@ void cBomb::Render(HDC _hdc)
 
 	Ellipse(_hdc, (int)(Pos.x - Scale.x / 2.f), (int)(Pos.y - Scale.y / 2.f),
 			  (int)(Pos.x + Scale.x / 2.f), (int)(Pos.y + Scale.y / 2.f));
+
+	Component_Render(_hdc);
 }

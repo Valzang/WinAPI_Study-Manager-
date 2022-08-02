@@ -3,11 +3,15 @@
 #include "Bomb.h"
 #include "SceneManager.h"
 #include "Scene.h"
+#include "Collider.h"
 
 cPlayer::cPlayer()
 {
 	// Texture 로딩하기
 	m_Tex = cResourceManager::GetInstance()->LoadTexture(L"PlayerTexture", L"texture\\temmie.bmp");
+	CreateCollider();
+
+	GetCollider()->SetScale(Vec2(m_Tex->Width(), m_Tex->Height()));
 	
 }
 
@@ -61,6 +65,8 @@ void cPlayer::Render(HDC _dc)
 	TransparentBlt(_dc,
 		   (int)(Pos.x - (float)(iWidth / 2)), (int)(Pos.y - (float)(iHeight / 2)),
 		   iWidth, iHeight, m_Tex->GetDC(), 0, 0, iWidth, iHeight, RGB(255,0,255));
+
+	Component_Render(_dc);
 
 }
 

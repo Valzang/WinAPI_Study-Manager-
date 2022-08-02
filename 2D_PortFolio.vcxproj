@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClInclude Include="2D_PortFolio.h" />
     <ClInclude Include="Bomb.h" />
+    <ClInclude Include="Collider.h" />
     <ClInclude Include="Core.h" />
     <ClInclude Include="PathManager.h" />
     <ClInclude Include="ResourceManager.h" />
@@ -155,6 +156,7 @@
     <ClInclude Include="framework.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Scene_Start.h" />
+    <ClInclude Include="SelectGDI.h" />
     <ClInclude Include="Sound.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Texture.h" />
@@ -163,6 +165,7 @@
   <ItemGroup>
     <ClCompile Include="2D_PortFolio.cpp" />
     <ClCompile Include="Bomb.cpp" />
+    <ClCompile Include="Collider.cpp" />
     <ClCompile Include="Core.cpp" />
     <ClCompile Include="PathManager.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
@@ -174,6 +177,7 @@
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="Scene_Start.cpp" />
+    <ClCompile Include="SelectGDI.cpp" />
     <ClCompile Include="Sound.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TimeManager.cpp" />

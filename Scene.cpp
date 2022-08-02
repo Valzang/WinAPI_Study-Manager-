@@ -25,6 +25,17 @@ void cScene::Update()
 	}
 }
 
+void cScene::FinalUpdate()
+{
+	for (UINT i = 0; i < (UINT)GROUP_TYPE::END; ++i)
+	{
+		for (UINT j = 0; j < m_arr_obj[i].size(); ++j)
+		{
+			m_arr_obj[i][j]->FinalUpdate();
+		}
+	}
+}
+
 void cScene::Render(HDC _hdc)
 {
 	int iWidth = (int)m_Tex->Width();

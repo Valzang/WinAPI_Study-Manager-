@@ -22,13 +22,8 @@ protected:
 	cTexture* m_Tex;
 
 public:
-	// 함수 정의를 헤더파일에 할 시에 inline 처리 되서 함수 호출 비용이 줆
-	void AddObject(cObject* _Obj, GROUP_TYPE _Type)
-	{
-		m_arr_obj[(UINT)_Type].push_back(_Obj);
-	}
 
-	cScene() {}
+	cScene() : m_Tex(nullptr) {}
 	virtual ~cScene();
 
 	void SetName(const wstring& _strName) { m_sceneName = _strName; }
@@ -37,7 +32,15 @@ public:
 	virtual void Enter() = 0; // 해당 씬으로 진입 시 호출
 	virtual void Exit() = 0;  // 해당 씬에서 탈출 시 호출
 
+	// 함수 정의를 헤더파일에 할 시에 inline 처리 되서 함수 호출 비용이 줆
+	void AddObject(cObject* _Obj, GROUP_TYPE _Type)
+	{
+		m_arr_obj[(UINT)_Type].push_back(_Obj);
+	}
+
+
 	void Update();
+	void FinalUpdate();
 	void Render(HDC _hdc);
 
 

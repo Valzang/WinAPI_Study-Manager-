@@ -29,7 +29,9 @@ void cSceneManager::Init()
 void cSceneManager::Update()
 {
 	m_curScene->Update();
+	m_curScene->FinalUpdate();
 }
+
 
 void cSceneManager::Render(HDC _hdc)
 {

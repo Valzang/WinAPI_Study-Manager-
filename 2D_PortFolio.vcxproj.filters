@@ -53,6 +53,15 @@
     <Filter Include="Engine\05. Resources\Source">
       <UniqueIdentifier>{62c65ecb-6a35-40f7-aa05-7624953440ea}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\03. Object\Component">
+      <UniqueIdentifier>{782c3ea4-f28e-4613-b4eb-e79054aa4726}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\03. Object\Component\Collider">
+      <UniqueIdentifier>{512e56b0-88d4-4922-b1fa-794d06abdb58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\06. Module">
+      <UniqueIdentifier>{57deaf70-5f53-48bf-9ed7-dc5096f52a57}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CustomDefine.h">
@@ -114,6 +123,12 @@
     </ClInclude>
     <ClInclude Include="ResourceManager.h">
       <Filter>Engine\02. Manager\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Collider.h">
+      <Filter>Engine\03. Object\Component\Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="SelectGDI.h">
+      <Filter>Engine\06. Module</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -177,6 +192,12 @@
     </ClCompile>
     <ClCompile Include="ResourceManager.cpp">
       <Filter>Engine\02. Manager\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Collider.cpp">
+      <Filter>Engine\03. Object\Component\Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectGDI.cpp">
+      <Filter>Engine\06. Module</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

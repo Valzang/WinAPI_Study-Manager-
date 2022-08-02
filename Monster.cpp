@@ -9,6 +9,7 @@ cMonster::cMonster() :
 	, m_MaxDistance(50.f)
 	, m_Direction(1)
 {
+	//CreateCollider();
 }
 
 cMonster::~cMonster()

@@ -34,17 +34,61 @@ struct Vec2
 
 	// 持失切 ===================================================
 	Vec2(const POINT _pt) : x((float)_pt.x), y((float)_pt.y) {}
+	Vec2() : x(0.f), y(0.f) {}
+
+	template <typename T>
+	Vec2(T _x, T _y) : x((float)_x), y((float)_y) {}
+	//Vec2(int _x, int _y) : x((float)_x), y((float)_y) {}
+
+
+	// 尻至切 ===================================================
+
 	Vec2& operator=(POINT _pt)
 	{
 		x = (float)_pt.x;
 		y = (float)_pt.y;
 	}
 
-	Vec2() : x(0.f), y(0.f) {}
-	Vec2(float _x, float _y) : x(_x), y(_y) {}
-	Vec2(int _x, int _y) : x((float)_x), y((float)_y) {}
+	Vec2& operator=(Vec2 _Other)
+	{
+		x = (float)_Other.x;
+		y = (float)_Other.y;
+		return *this;
+	}
 
-	// 持失切 ===================================================
+	Vec2& operator+(Vec2 _Other)
+	{
+		x += _Other.x;
+		y += _Other.y;
+		return *this;
+	}
+
+	Vec2& operator-(Vec2 _Other)
+	{
+		x -= _Other.x;
+		y -= _Other.y;
+		return *this;
+	}
+
+	Vec2& operator*(Vec2 _Other)
+	{
+		x *= _Other.x;
+		y *= _Other.y;
+		return *this;
+	}
+
+	Vec2& operator/(Vec2 _Other)
+	{
+		assert(!(_Other.x == 0.f || _Other.y == 0.f));
+
+		x /= _Other.x;
+		y /= _Other.y;
+		return *this;
+	}
+
+
+
+	// ========================================================
 	Vec2& Normalize()
 	{
 		float fLen = Length();
@@ -85,5 +129,17 @@ enum class SCENE_TYPE
 	END,
 };
 
+enum class BRUSH_TYPE
+{
+	HOLLOW,
+	END,	
+};
 
+enum class PEN_TYPE
+{
+	RED,
+	GREEN,
+	BLUE,
+	END,
+};
 
