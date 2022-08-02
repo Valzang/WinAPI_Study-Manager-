@@ -1,7 +1,6 @@
 #include "Monster.h"
-
 #include "TimeManager.h"
-
+#include "Collider.h"
 
 cMonster::cMonster() : 	
 	m_CenterPos(Vec2 { 0.f, 0.f })
@@ -9,7 +8,8 @@ cMonster::cMonster() :
 	, m_MaxDistance(50.f)
 	, m_Direction(1)
 {
-	//CreateCollider();
+	CreateCollider();
+	GetCollider()->SetScale(Vec2(40.f, 40.f));
 }
 
 cMonster::~cMonster()

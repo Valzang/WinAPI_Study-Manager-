@@ -7,6 +7,7 @@
 #include "TimeManager.h"
 #include "SceneManager.h"
 #include "PathManager.h"
+#include "CollisionManager.h"
 
 class cCore
 {

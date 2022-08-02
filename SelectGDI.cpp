@@ -5,8 +5,8 @@
 SelectGDI::SelectGDI(HDC _dc, PEN_TYPE _PenType)
 	:m_hdc(_dc), m_hDefaultBrush(nullptr), m_hDefaultPen(nullptr)
 {
-	HPEN hGreenPen = cCore::GetInstance()->GetPen(_PenType);
-	m_hDefaultPen = (HPEN)SelectObject(_dc, hGreenPen);
+	HPEN hPen = cCore::GetInstance()->GetPen(_PenType);
+	m_hDefaultPen = (HPEN)SelectObject(_dc, hPen);
 }
 
 SelectGDI::SelectGDI(HDC _dc, BRUSH_TYPE _BrushType)

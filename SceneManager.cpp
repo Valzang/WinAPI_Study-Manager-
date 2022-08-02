@@ -29,7 +29,7 @@ void cSceneManager::Init()
 void cSceneManager::Update()
 {
 	m_curScene->Update();
-	m_curScene->FinalUpdate();
+	m_curScene->LateUpdate();
 }
 
 

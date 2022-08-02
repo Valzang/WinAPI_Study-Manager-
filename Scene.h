@@ -33,14 +33,13 @@ public:
 	virtual void Exit() = 0;  // 해당 씬에서 탈출 시 호출
 
 	// 함수 정의를 헤더파일에 할 시에 inline 처리 되서 함수 호출 비용이 줆
-	void AddObject(cObject* _Obj, GROUP_TYPE _Type)
-	{
-		m_arr_obj[(UINT)_Type].push_back(_Obj);
-	}
+	void AddObject(cObject* _Obj, GROUP_TYPE _Type) { m_arr_obj[(UINT)_Type].push_back(_Obj); }
+
+	const vector<cObject*>& GetGroupObject(GROUP_TYPE _Type) { return m_arr_obj[(UINT)_Type]; }
 
 
 	void Update();
-	void FinalUpdate();
+	void LateUpdate();
 	void Render(HDC _hdc);
 
 

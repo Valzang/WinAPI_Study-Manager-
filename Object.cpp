@@ -23,10 +23,10 @@ void cObject::Component_Render(HDC _hdc)
 	}
 }
 
-void cObject::FinalUpdate()
+void cObject::LateUpdate()
 {
 	if (m_Collider != nullptr)
-		m_Collider->FinalUpdate();
+		m_Collider->LateUpdate();
 }
 
 void cObject::Render(HDC _hdc)

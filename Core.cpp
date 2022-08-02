@@ -1,6 +1,5 @@
 #include "Core.h"
 
-
 cCore::cCore() : m_hBit(NULL), m_hDC(NULL)
 , m_hWnd(NULL), m_memDC(NULL), m_ptResolution({ 0, 0 }), m_arrBrush {}, m_arrPen {}
 {
@@ -30,8 +29,8 @@ void cCore::CreateBrushPen()
 	m_arrBrush[(UINT)BRUSH_TYPE::HOLLOW] = (HBRUSH)GetStockObject(HOLLOW_BRUSH);
 
 	m_arrPen[(UINT)PEN_TYPE::RED] = CreatePen(PS_SOLID, 1, RGB(255, 0, 0));
-	m_arrPen[(UINT)PEN_TYPE::BLUE] = CreatePen(PS_SOLID, 1, RGB(0, 255, 0));
-	m_arrPen[(UINT)PEN_TYPE::GREEN] = CreatePen(PS_SOLID, 1, RGB(0, 0, 255));
+	m_arrPen[(UINT)PEN_TYPE::GREEN] = CreatePen(PS_SOLID, 1, RGB(0, 255, 0));
+	m_arrPen[(UINT)PEN_TYPE::BLUE] = CreatePen(PS_SOLID, 1, RGB(0, 0, 255));
 }
 
 int cCore::Init(HWND _hWnd, POINT _ptResolution)
@@ -71,6 +70,7 @@ void cCore::Progress()
 	cTimeManager::GetInstance()->Update();
 	cKeyManager::GetInstance()->Update();
 	cSceneManager::GetInstance()->Update();
+	cCollisionManager::GetInstance()->Update();
 
 
 	// Rendering

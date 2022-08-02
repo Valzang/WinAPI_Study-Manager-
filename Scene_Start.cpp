@@ -3,6 +3,8 @@
 #include "Monster.h"
 
 #include "Core.h"
+#include "CollisionManager.h"
+
 
 void cScene_Start::Enter()
 {
@@ -12,7 +14,7 @@ void cScene_Start::Enter()
 	// Object 위치, 크기 설정
 	PlayerObj->SetPos(Vec2 { 640.f, 384.f });
 	PlayerObj->SetScale(Vec2 {100.f, 100.f});
-	AddObject(PlayerObj, GROUP_TYPE::DEFAULT);
+	AddObject(PlayerObj, GROUP_TYPE::PLAYER);
 
 
 	// 몬스터 배치
@@ -32,12 +34,16 @@ void cScene_Start::Enter()
 		MonsterObj->SetCenterPos(MonsterObj->GetPos());
 		MonsterObj->SetMaxDist(MoveDist);
 		MonsterObj->SetScale(Vec2 { ObjectScale, ObjectScale });
-		AddObject(MonsterObj, GROUP_TYPE::DEFAULT);		
+		AddObject(MonsterObj, GROUP_TYPE::MONSTER);		
 	}
-	
+
+	// 충돌 지정
+	// 플레이어 그룹과 몬스터 그룹 간의 충돌 체크
+	cCollisionManager::GetInstance()->CheckGroup(GROUP_TYPE::PLAYER, GROUP_TYPE::MONSTER);
 
 }
 
-void cScene_Start::Exit()
+void cScene_Start::Exit() // 다른 씬으로 전환할 때
 {
+	cCollisionManager::GetInstance()->Reset();
 }

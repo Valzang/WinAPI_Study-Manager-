@@ -30,7 +30,7 @@ public:
 	virtual void Update() = 0;
 
 	// final 키워드로 자식에서 오버라이드 하지 못하게끔
-	virtual void FinalUpdate() final;
+	virtual void LateUpdate() final;
 	virtual void Render(HDC _hdc);
 };
 
