@@ -124,7 +124,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
    {
       return FALSE;
    }
-   cCore::GetInstance()->Init(hWnd, POINT { 1280, 768 });
+   //cCore::GetInstance()->Init(hWnd, POINT { 1280, 768 });
    //cTimeManager::GetInstance()->Init();
 
    ShowWindow(hWnd, nCmdShow);

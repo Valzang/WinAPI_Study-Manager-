@@ -19,8 +19,6 @@ private:
 	
 
 public:
-	cCollisionManager();
-	~cCollisionManager();
 	void Init();
 	void CheckGroup(GROUP_TYPE _Left, GROUP_TYPE _Right);
 	void Reset() {memset(m_arrCheck, 0, sizeof(UINT) * (UINT)GROUP_TYPE::END);};
