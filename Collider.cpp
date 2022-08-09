@@ -5,12 +5,30 @@
 
 UINT cCollider::g_NextID = 0;
 
-cCollider::cCollider() : m_Owner(nullptr), m_OffsetPos(), m_ID(g_NextID++)
+cCollider::cCollider() : 
+	m_Owner(nullptr), m_OffsetPos(), m_ID(g_NextID++)
 {
 
 }
 
+cCollider::cCollider(const cCollider& _origin) :
+	m_Owner(nullptr), m_OffsetPos(_origin.m_OffsetPos),m_Scale(_origin.m_Scale), m_ID(g_NextID++)
+{
+}
+
 cCollider::~cCollider()
+{
+}
+
+void cCollider::OnCollisionEnter(cCollider* _Other)
+{
+}
+
+void cCollider::OnCollision(cCollider* _Other)
+{
+}
+
+void cCollider::OnCollisionExit(cCollider* _Other)
 {
 }
 

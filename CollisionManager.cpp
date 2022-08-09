@@ -67,22 +67,63 @@ void cCollisionManager::CollisionGroupUpdate(GROUP_TYPE _Left, GROUP_TYPE _Right
 	const vector<cObject*>& vecLeft = CurScene->GetGroupObject(_Left);
 	const vector<cObject*>& vecRight = CurScene->GetGroupObject(_Right);
 
+	map<ULONGLONG, bool>::iterator iter;
+
 	for (UINT i = 0; i < vecLeft.size(); ++i)
 	{
+		cCollider* LeftCollider = vecLeft[i]->GetCollider();
 		// 충돌체 없는 경우
-		if (vecLeft[i]->GetCollider() == nullptr)
+		if (LeftCollider == nullptr)
 			continue;
 		for (UINT j = 0; j < vecRight.size(); ++j)
 		{			
-			// 충돌체가 없거나, 자기 자신인 경우
-			if (vecRight[j]->GetCollider() == nullptr
-				|| vecLeft[i] == vecRight[j])
+			// 충돌체가 없거나, 자기 자신과의 충돌인 경우
+			if (vecRight[j]->GetCollider() == nullptr || vecLeft[i] == vecRight[j])
 				continue;
+
+			cCollider* RightCollider = vecRight[j]->GetCollider();
+
+			// 두 충돌체 조합으로 아이디 생성
+			COLLIDER_ID ID;
+			ID.Left_ID = LeftCollider->GetID();
+			ID.Right_ID = RightCollider->GetID();
+
+			iter = m_mapColInfo.find(ID.ID);
+
+			// 충돌 정보에 없는 경우 새로 등록
+			if (iter == m_mapColInfo.end())
+			{
+				m_mapColInfo.insert(make_pair(ID.ID, false));
+				iter = m_mapColInfo.find(ID.ID);
+			}
+
 			
 			// 충돌하고 있는 경우
-			if (IsCollision(vecLeft[i]->GetCollider(), vecRight[j]->GetCollider()))
+			if (IsCollision(LeftCollider, RightCollider))
 			{
-
+				// 현재 충돌 중이고 이전에도 충돌
+				if (iter->second)
+				{
+					LeftCollider->OnCollision(RightCollider);
+					RightCollider->OnCollision(LeftCollider);
+				}
+				// 현재 충돌 중인데, 이전에는 충돌 X
+				else
+				{
+					LeftCollider->OnCollisionEnter(RightCollider);
+					RightCollider->OnCollisionEnter(LeftCollider);
+					iter->second = true;
+				}
+			}
+			else
+			{
+				// 현재는 충돌 X, 이전에는 충돌 O
+				if (iter->second)
+				{
+					LeftCollider->OnCollisionExit(RightCollider);
+					RightCollider->OnCollisionExit(LeftCollider);
+					iter->second = false;
+				}
 			}
 		}
 	}
@@ -90,8 +131,10 @@ void cCollisionManager::CollisionGroupUpdate(GROUP_TYPE _Left, GROUP_TYPE _Right
 
 }
 
-bool cCollisionManager::IsCollision(cCollider* _Leftcoll, cCollider* _Rightcoll)
+bool cCollisionManager::IsCollision(cCollider* _Leftcldr, cCollider* _Rightcldr)
 {
+	_Leftcldr->GetFinalPos();
+	_Rightcldr->GetFinalPos();
 	return false;
 }
 
