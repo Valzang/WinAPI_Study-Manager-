@@ -10,7 +10,6 @@ cPlayer::cPlayer()
 	// Texture 로딩하기
 	m_Tex = cResourceManager::GetInstance()->LoadTexture(L"PlayerTexture", L"texture\\temmie.bmp");
 	CreateCollider();
-	//GetCollider()->SetOffsetPos(Vec2(100.f, 100.f));
 	GetCollider()->SetScale(Vec2(m_Tex->Width(), m_Tex->Height()));
 	
 }
@@ -53,8 +52,7 @@ void cPlayer::Update()
 	if (KEY_CHECK(KEY::L, KEY_STATE::HOLD))
 	{
 		Pos.x += 200.f * DELTA_TIME;
-	}
-	
+	}	
 
 	if (KEY_CHECK(KEY::A, KEY_STATE::DOWN))
 	{

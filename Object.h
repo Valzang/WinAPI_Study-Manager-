@@ -5,6 +5,8 @@
 #include "TimeManager.h"
 #include "Collider.h"
 
+enum { PLAYER, PLATFORM, PLATFORM_ROTATE, MONSTER };
+
 
 class cObject
 {
@@ -13,8 +15,10 @@ private:
 	Vec2 m_Scale;	
 	cCollider* m_Collider;
 
+	int m_curClassType;
+
 public:
-	cObject() : m_Pos(), m_Scale(), m_Collider(nullptr) {};
+	cObject() : m_Pos(), m_Scale(), m_Collider(nullptr), m_curClassType() {};
 	virtual ~cObject();
 
 	void SetPos(Vec2 _Pos) { m_Pos = _Pos; }
@@ -23,6 +27,8 @@ public:
 	void CreateCollider();
 	cCollider* GetCollider() { return m_Collider; }
 	void Component_Render(HDC _hdc);
+
+	int GetCurClassType() { return m_curClassType; }
 
 	Vec2 GetPos() { return m_Pos; }
 	Vec2 GetScale() { return m_Scale; }

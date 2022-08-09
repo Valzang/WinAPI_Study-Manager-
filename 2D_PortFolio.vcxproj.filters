@@ -14,9 +14,6 @@
     <Filter Include="Engine\02. Manager">
       <UniqueIdentifier>{a8f44aa2-26c6-4004-99a3-f586f90cb0c8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\02. Manager\Header">
-      <UniqueIdentifier>{279b0bf6-7e91-4a87-9508-768b94b98b0d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Engine\02. Manager\Source">
       <UniqueIdentifier>{fb81103b-f10b-4334-98c8-293ff520240a}</UniqueIdentifier>
     </Filter>
@@ -65,20 +62,23 @@
     <Filter Include="Engine\02. Manager\CollisionManager">
       <UniqueIdentifier>{466d6316-1c14-4330-8c4a-b0850f1a67f5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\02. Manager\Header\KeyManager">
+    <Filter Include="Engine\02. Manager\KeyManager">
       <UniqueIdentifier>{6f170890-0099-4ce6-aef8-5aead17a3d17}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\02. Manager\Header\PathManager">
+    <Filter Include="Engine\02. Manager\PathManager">
       <UniqueIdentifier>{cf4f5545-3efa-4e4f-8b19-592519856a97}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\02. Manager\Header\ResourceManager">
+    <Filter Include="Engine\02. Manager\ResourceManager">
       <UniqueIdentifier>{d63f001a-745a-48f7-b84f-bf3ad6b3d67d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\02. Manager\Header\SceneManager">
+    <Filter Include="Engine\02. Manager\SceneManager">
       <UniqueIdentifier>{06f4a38d-f88f-48b0-bfc1-fe96ed318aeb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\02. Manager\Header\TimeManager">
+    <Filter Include="Engine\02. Manager\TimeManager">
       <UniqueIdentifier>{47b0c49d-3385-485e-a311-e67606d06d91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\02. Manager\EventManager">
+      <UniqueIdentifier>{7644eaed-72fe-43d7-bcc7-e751f2d701a6}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -134,22 +134,25 @@
       <Filter>Engine\06. Module</Filter>
     </ClInclude>
     <ClInclude Include="KeyManager.h">
-      <Filter>Engine\02. Manager\Header\KeyManager</Filter>
+      <Filter>Engine\02. Manager\KeyManager</Filter>
     </ClInclude>
     <ClInclude Include="TimeManager.h">
-      <Filter>Engine\02. Manager\Header\TimeManager</Filter>
+      <Filter>Engine\02. Manager\TimeManager</Filter>
     </ClInclude>
     <ClInclude Include="SceneManager.h">
-      <Filter>Engine\02. Manager\Header\SceneManager</Filter>
+      <Filter>Engine\02. Manager\SceneManager</Filter>
     </ClInclude>
     <ClInclude Include="ResourceManager.h">
-      <Filter>Engine\02. Manager\Header\ResourceManager</Filter>
+      <Filter>Engine\02. Manager\ResourceManager</Filter>
     </ClInclude>
     <ClInclude Include="PathManager.h">
-      <Filter>Engine\02. Manager\Header\PathManager</Filter>
+      <Filter>Engine\02. Manager\PathManager</Filter>
     </ClInclude>
     <ClInclude Include="CollisionManager.h">
       <Filter>Engine\02. Manager\CollisionManager</Filter>
+    </ClInclude>
+    <ClInclude Include="EventManager.h">
+      <Filter>Engine\02. Manager\EventManager</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -206,22 +209,25 @@
       <Filter>Engine\06. Module</Filter>
     </ClCompile>
     <ClCompile Include="KeyManager.cpp">
-      <Filter>Engine\02. Manager\Header\KeyManager</Filter>
+      <Filter>Engine\02. Manager\KeyManager</Filter>
     </ClCompile>
     <ClCompile Include="TimeManager.cpp">
-      <Filter>Engine\02. Manager\Header\TimeManager</Filter>
+      <Filter>Engine\02. Manager\TimeManager</Filter>
     </ClCompile>
     <ClCompile Include="SceneManager.cpp">
-      <Filter>Engine\02. Manager\Header\SceneManager</Filter>
+      <Filter>Engine\02. Manager\SceneManager</Filter>
     </ClCompile>
     <ClCompile Include="ResourceManager.cpp">
-      <Filter>Engine\02. Manager\Header\ResourceManager</Filter>
+      <Filter>Engine\02. Manager\ResourceManager</Filter>
     </ClCompile>
     <ClCompile Include="PathManager.cpp">
-      <Filter>Engine\02. Manager\Header\PathManager</Filter>
+      <Filter>Engine\02. Manager\PathManager</Filter>
     </ClCompile>
     <ClCompile Include="CollisionManager.cpp">
       <Filter>Engine\02. Manager\CollisionManager</Filter>
+    </ClCompile>
+    <ClCompile Include="EventManager.cpp">
+      <Filter>Engine\02. Manager\EventManager</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
