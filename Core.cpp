@@ -67,13 +67,14 @@ int cCore::Init(HWND _hWnd, POINT _ptResolution)
 void cCore::Progress()
 {
 	
+	// Scene 업데이트 ==================================================
 	cTimeManager::GetInstance()->Update();
 	cKeyManager::GetInstance()->Update();
 	cSceneManager::GetInstance()->Update();
 	cCollisionManager::GetInstance()->Update();
 
 
-	// Rendering
+	// Rendering ======================================================
 
 	Rectangle(m_memDC, -1, -1, m_ptResolution.x + 1, m_ptResolution.y + 1);
 
@@ -83,5 +84,9 @@ void cCore::Progress()
 		   , m_memDC, 0, 0, SRCCOPY);
 
 	cTimeManager::GetInstance()->Render(); // 프레임 표시
+
+
+	// 이벤트 지연처리 (마무리 작업) ====================================
+	cEventManager::GetInstance()->Update();
 
 }

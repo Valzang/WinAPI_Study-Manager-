@@ -8,6 +8,7 @@
 #include "SceneManager.h"
 #include "PathManager.h"
 #include "CollisionManager.h"
+#include "EventManager.h"
 
 class cCore
 {

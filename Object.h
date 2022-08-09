@@ -17,8 +17,12 @@ private:
 
 	int m_curClassType;
 
+	bool m_Alive;
+
+	void SetDead() { m_Alive = false; }
+
 public:
-	cObject() : m_Pos(), m_Scale(), m_Collider(nullptr), m_curClassType() {};
+	cObject() : m_Pos(), m_Scale(), m_Collider(nullptr), m_curClassType(), m_Alive(true) {};
 	virtual ~cObject();
 
 	void SetPos(Vec2 _Pos) { m_Pos = _Pos; }
@@ -30,8 +34,12 @@ public:
 
 	int GetCurClassType() { return m_curClassType; }
 
+	bool IsDead() { return !m_Alive; }
+
 	Vec2 GetPos() { return m_Pos; }
 	Vec2 GetScale() { return m_Scale; }
+
+	friend class cEventManager;
 
 	virtual void Update() = 0;
 

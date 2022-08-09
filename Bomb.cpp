@@ -7,7 +7,6 @@
 cBomb::cBomb() : m_Theta((float)(3*PI / -4.f)), m_Dir(Vec2(-2.f,-3.f))
 {
 	m_Dir.Normalize();
-	//CreateCollider();
 }
 
 cBomb::~cBomb()

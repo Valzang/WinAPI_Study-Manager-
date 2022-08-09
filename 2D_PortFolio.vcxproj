@@ -145,6 +145,7 @@
     <ClInclude Include="CollisionManager.h" />
     <ClInclude Include="Core.h" />
     <ClInclude Include="EventManager.h" />
+    <ClInclude Include="Function.h" />
     <ClInclude Include="PathManager.h" />
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="Resources.h" />

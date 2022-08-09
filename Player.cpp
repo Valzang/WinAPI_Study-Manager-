@@ -4,6 +4,7 @@
 #include "SceneManager.h"
 #include "Scene.h"
 #include "Collider.h"
+#include "Function.h"
 
 cPlayer::cPlayer()
 {
@@ -89,8 +90,13 @@ void cPlayer::CreateBomb()
 	cBomb* bomb = new cBomb;
 	bomb->SetPos(bomb_Pos);
 	bomb->SetScale(Vec2(25.f, 25.f));
+
+	CreateObject(bomb, GROUP_TYPE::BOMB);
+
+
 	//bomb->SetDirection(true);
 
-	cScene* curScene = cSceneManager::GetInstance()->GetCurScene();
-	curScene->AddObject(bomb, GROUP_TYPE::DEFAULT);
+	// 기존의 바로 등록하는 함수
+	//cScene* curScene = cSceneManager::GetInstance()->GetCurScene();
+	//curScene->AddObject(bomb, GROUP_TYPE::DEFAULT);
 }
