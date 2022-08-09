@@ -16,6 +16,7 @@ private:
 	Vec2		m_Scale;		// 충돌체 크기
 
 	UINT		m_ID;		// 충돌체 고유한 ID값
+	INT			m_isCollided;		// 충돌체 고유한 ID값
 
 
 	

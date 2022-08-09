@@ -22,7 +22,7 @@ void cCollisionManager::CheckGroup(GROUP_TYPE _Left, GROUP_TYPE _Right)
 	// 더 작은 값의 그룹 타입을 행으로
 	// 큰 값을 열(=비트 단위)로 사용
 
-	UINT iRow = (UINT)_Left < (UINT)_Left ? (UINT)_Left : (UINT)_Right;
+	UINT iRow = (UINT)_Left < (UINT)_Right ? (UINT)_Left : (UINT)_Right;
 	UINT iCol = iRow == (UINT)_Left ? (UINT)_Right : (UINT)_Left;
 	
 	if (m_arrCheck[iRow] & (1 << iCol))
