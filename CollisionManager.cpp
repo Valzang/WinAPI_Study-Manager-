@@ -133,8 +133,17 @@ void cCollisionManager::CollisionGroupUpdate(GROUP_TYPE _Left, GROUP_TYPE _Right
 
 bool cCollisionManager::IsCollision(cCollider* _Leftcldr, cCollider* _Rightcldr)
 {
-	_Leftcldr->GetFinalPos();
-	_Rightcldr->GetFinalPos();
+	Vec2 LeftPos = _Leftcldr->GetFinalPos();
+	Vec2 LeftScale = _Leftcldr->GetScale();
+
+	Vec2 RightPos = _Rightcldr->GetFinalPos();
+	Vec2 RightScale = _Rightcldr->GetScale();
+
+	if ((abs(RightPos.x - LeftPos.x) < (LeftScale.x + RightScale.x) / 2.f)
+		&& (abs(RightPos.y - LeftPos.y) < (LeftScale.y + RightScale.y) / 2.f))
+	{
+		return true;
+	}
 	return false;
 }
 

@@ -18,7 +18,7 @@ void cScene_Start::Enter()
 
 
 	// 몬스터 배치
-	int MonCount = 16;
+	int MonCount = 5;
 	float MoveDist = 25.f;
 	float ObjectScale = 50.f;
 
