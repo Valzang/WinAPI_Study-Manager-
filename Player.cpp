@@ -20,6 +20,18 @@ cPlayer::~cPlayer()
 
 }
 
+void cPlayer::OnCollisionEnter(cCollider* _Other)
+{
+}
+
+void cPlayer::OnCollision(cCollider* _Other)
+{
+}
+
+void cPlayer::OnCollisionExit(cCollider* _Other)
+{
+}
+
 void cPlayer::Update()
 {
 	Vec2 Pos = GetPos();

@@ -23,15 +23,18 @@ cCollider::~cCollider()
 void cCollider::OnCollisionEnter(cCollider* _Other)
 {
 	++m_isCollided;
+	m_Owner->OnCollisionEnter(_Other);
 }
 
 void cCollider::OnCollision(cCollider* _Other)
 {
+	m_Owner->OnCollision(_Other);
 }
 
 void cCollider::OnCollisionExit(cCollider* _Other)
 {
 	--m_isCollided;
+	m_Owner->OnCollisionExit(_Other);
 }
 
 void cCollider::LateUpdate()

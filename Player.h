@@ -13,6 +13,10 @@ public:
     cPlayer();
     virtual ~cPlayer();
 
+    virtual void OnCollisionEnter(cCollider* _Other);
+    virtual void OnCollision(cCollider* _Other);
+    virtual void OnCollisionExit(cCollider* _Other);
+
     virtual void Update() override;
     virtual void Render(HDC _dc);
     void CreateBomb();

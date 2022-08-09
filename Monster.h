@@ -15,6 +15,10 @@ public:
     cMonster();
     ~cMonster();
 
+    virtual void OnCollisionEnter(cCollider* _Other);
+    virtual void OnCollision(cCollider* _Other);
+    virtual void OnCollisionExit(cCollider* _Other);
+
     float GetSpeed() { return m_Speed; }
     void SetSpeed(float _speed) { m_Speed = _speed; }
     void SetMaxDist(float _dist) { m_MaxDistance = _dist; }

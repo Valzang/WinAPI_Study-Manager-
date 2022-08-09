@@ -112,7 +112,7 @@ void cCollisionManager::CollisionGroupUpdate(GROUP_TYPE _Left, GROUP_TYPE _Right
 				{
 					LeftCollider->OnCollisionEnter(RightCollider);
 					RightCollider->OnCollisionEnter(LeftCollider);
-					iter->second = true;
+					iter->second = true; 
 				}
 			}
 			else

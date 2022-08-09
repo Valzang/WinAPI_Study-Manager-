@@ -65,3 +65,15 @@ void cBomb::Render(HDC _hdc)
 
 	Component_Render(_hdc);
 }
+
+void cBomb::OnCollisionEnter(cCollider* _Other)
+{
+}
+
+void cBomb::OnCollision(cCollider* _Other)
+{
+}
+
+void cBomb::OnCollisionExit(cCollider* _Other)
+{
+}

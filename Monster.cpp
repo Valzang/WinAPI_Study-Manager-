@@ -16,6 +16,21 @@ cMonster::~cMonster()
 {
 }
 
+void cMonster::OnCollisionEnter(cCollider* _Other)
+{
+	cObject* OtherObj = _Other->GetObject();
+
+	// enum을 오브젝트에 써서 받아온 오브젝트의 클래스 정보를 비교해서 사용가능
+}
+
+void cMonster::OnCollision(cCollider* _Other)
+{
+}
+
+void cMonster::OnCollisionExit(cCollider* _Other)
+{
+}
+
 void cMonster::Update()
 {
 	Vec2 CurPos = GetPos();

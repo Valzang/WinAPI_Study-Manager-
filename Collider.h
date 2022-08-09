@@ -39,6 +39,7 @@ public:
 	Vec2 GetScale() { return m_Scale; }
 
 	Vec2 GetFinalPos() { return m_FinalPos; }
+	cObject* GetObject() { return m_Owner; }
 
 	void OnCollisionEnter(cCollider* _Other); // 첫 충돌 시 호출되는 함수
 	void OnCollision(cCollider* _Other); // 충돌 중인 경우 호출되는 함수
